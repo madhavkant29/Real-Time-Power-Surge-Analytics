@@ -31,7 +31,7 @@ This system provides a robust pipeline for electrical safety. It collects high-g
 ### 1. Clone & Enter Directory
 
 ```bash
-git clone https://github.com/<your-username>/voltage-monitor.git
+git clone https://github.com/madhavkant29/electric-surge-monitoring-and-predictor.git
 cd voltage-monitor
 ```
 
@@ -58,35 +58,12 @@ To connect your physical hardware, ensure the ESP32 is configured to POST JSON d
 
 If you don't have hardware ready, you can simulate a sensor pulse:
 
-```powershell
-Invoke-RestMethod -Method Post `
-  -Uri "http://localhost:8000/voltage" `
-  -ContentType "application/json" `
-  -Body '{
-    "sensor_id": "ESP32_PZEM_01",
-    "timestamp": "2026-03-03T21:20:01Z",
-    "status": "online",
-    "measurements": {
-      "voltage": 230.5,
-      "current": 0.26,
-      "power": 60.0,
-      "energy": 12.45,
-      "frequency": 50.0,
-      "power_factor": 1.0
-    },
-    "load_state": "ON",
-    "units": {
-      "voltage": "V",
-      "current": "A",
-      "power": "W",
-      "energy": "kWh",
-      "frequency": "Hz",
-      "power_factor": "pf"
-    }
-  }'
+```bash
+python test.py
 ```
 
-> **Note:** Predicted voltage will appear after enough historical data points are collected (default is 10).
+> **Note:** Predicted voltage will appear after enough historical data points are collected (default is 15).
+> can edit range of values in test.py
 
 ---
 
