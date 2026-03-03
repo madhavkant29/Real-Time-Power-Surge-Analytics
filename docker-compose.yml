@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: voltage_backend
+    ports:
+      - "8000:8000"
+    restart: always
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: dashboard/Dockerfile
+    container_name: voltage_dashboard
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    restart: always 

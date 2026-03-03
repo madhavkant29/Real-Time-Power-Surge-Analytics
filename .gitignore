@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+.venv/
+
+# VSCode
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
+*.tar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest / cache
+.pytest_cache/
+.cache/
