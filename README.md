@@ -1,16 +1,16 @@
-# ⚡ Voltage Monitoring & Surge Prediction System
+# Voltage Monitoring & Surge Prediction System
 
 An end-to-end IoT solution designed to monitor electrical parameters from ESP32-based sensors, visualize real-time trends, and predict short-term voltage surges using Linear Regression.
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 This system provides a robust pipeline for electrical safety. It collects high-granularity data (Voltage, Current, Power, Frequency) from hardware sensors, processes them through a FastAPI backend, and serves a dynamic Streamlit dashboard for real-time monitoring and autonomous protection logic.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Real-time Monitoring:** Periodic tracking of Voltage (V), Current (I), Power (W), and Frequency (Hz).
 - **Surge Prediction:** Uses **Linear Regression** to analyze historical trends and forecast upcoming voltage levels.
@@ -20,7 +20,7 @@ This system provides a robust pipeline for electrical safety. It collects high-g
 
 ---
 
-## 🛠️ Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 
@@ -50,7 +50,7 @@ docker compose up --build
 
 ---
 
-## 📡 Hardware Integration (ESP32)
+## Hardware Integration (ESP32)
 
 To connect your physical hardware, ensure the ESP32 is configured to POST JSON data to your host machine's local IP address (e.g., `http://192.168.1.XX:8000/voltage`).
 
@@ -67,7 +67,7 @@ python test.py
 
 ---
 
-## 📊 Analytics & Prediction
+## Analytics & Prediction
 
 The system calculates the predicted voltage by fitting a linear model to the most recent time-series data:
 
@@ -81,15 +81,13 @@ Where:
 
 ---
 
-## 🛠️ Future Roadmap
+## Future Roadmap
 
 - [ ] **Voltage Safety Bands:** Visual thresholds (Green/Yellow/Red) on the dashboard.
-- [ ] **Data Export:** Download historical sessions as `.csv` files.
-- [ ] **Slope Visualization:** Real-time derivative graphs to show the rate of voltage change.
 - [ ] **Alerting:** Integration with Telegram or WhatsApp for critical surge notifications.
 
 ---
 
-## 📄 License
+##  License
 
 Distributed under the [MIT License](LICENSE).
