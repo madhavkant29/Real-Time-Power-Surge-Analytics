@@ -38,7 +38,7 @@ def receive_data(data: ESP32Data):
 
     # Kill switch logic
     relay_state = "ON"
-    if predicted >= 250.0 or kill_switch_state.get(data.sensor_id) == "OFF":
+    if (predicted and predicted >= 250.0) or (kill_switch_state.get(data.sensor_id) == "OFF"):
         relay_state = "OFF"
         # Optional: send HTTP/MQTT to ESP32 relay here
 
@@ -75,7 +75,7 @@ def get_latest_prediction():
     risk = classify_risk(latest["voltage"], predicted)
 
     relay_state = "ON"
-    if predicted >= 250.0 or kill_switch_state.get(latest["sensor_id"]) == "OFF":
+    if (predicted and predicted >= 250.0) or (kill_switch_state.get(latest["sensor_id"]) == "OFF"):
         relay_state = "OFF"
 
     return {
